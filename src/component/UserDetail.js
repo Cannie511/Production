@@ -2,6 +2,10 @@ import React from "react";
 import "../style/UserDetail.scss"
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import Newfeed from "./newfeed";
+import Space from "./Space";
+import newImg from "../assets/image/baidang.jpg"
+import newImg2 from "../assets/image/baidang2.jpg"
 class UserDetail extends React.Component {
     state = {
         friend: {}
@@ -13,7 +17,7 @@ class UserDetail extends React.Component {
             this.setState({
                 friend: res && res.data && res.data.data ? res.data.data : {},
             })
-            console.log("check friend: ",res)
+            console.log("check friend: ",this.state.friend)
         }
     }
 
@@ -22,20 +26,26 @@ class UserDetail extends React.Component {
         let isEmptyObj = Object.keys(friend).length === 0;
         console.log("check objeck: ", isEmptyObj)
         return (
+            <>
             <div className="us-container">
                 <div className="background">
                     <div className="detail">
-                        {isEmptyObj === false && <>
+                        {isEmptyObj === false && <> 
                             <div className="avatar">
-                                <img src={friend.avatar} />
+                                <img src={friend.avatar}  alt=""/>
                             </div>
                             <div className="user-name">
                                 <h2><b>{friend.first_name} {friend.last_name}</b> </h2>
                             </div>
-                        </>}
+                        </>
+                       }
                     </div>
                 </div>
+                
             </div>
+            <Space/>
+            <Newfeed name={friend.first_name +' '+friend.last_name} avt={friend.avatar} email={friend.email} newimg ={newImg}/>
+            </>
         )
     }
 }

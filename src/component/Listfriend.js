@@ -1,7 +1,5 @@
 import React from "react";
 import "../style/Listfriend.scss"
-import ListGroup from 'react-bootstrap/ListGroup';
-import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
 
@@ -19,7 +17,10 @@ class Listfriend extends React.Component {
     }
     handleDeltail = (friend) => {
         console.log(">>check id: ", friend.id)
-        this.props.history.push(`/user/${friend.id}`)
+        this.props.history.push('/user');
+        setTimeout(() => {
+            this.props.history.push(`/user/${friend.id}`);
+          }, 100);
     }
     render() {
         let { listfriend } = this.state;
@@ -32,7 +33,7 @@ class Listfriend extends React.Component {
                         listfriend.map((item, index) => {
                             return (
                                 <li key={item.id} onClick={() => this.handleDeltail(item)}>
-                                    <span><img src={item.avatar}/> {item.first_name} {item.last_name}</span>
+                                    <span><img src={item.avatar} alt/> {item.first_name} {item.last_name}</span>
                                 </li>
                             )
                         })

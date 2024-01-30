@@ -1,13 +1,13 @@
 .us-container {
     width: 50%;
     height: fit-content;
-    background-color: aquamarine;
     margin: 0 auto;
 
     .background {
         width: 100%;
         height: 30%;
         background-color: #74a2e7;
+        border-radius: 0 0 10px 10px;
         display: flex;
         justify-content: center;
         .detail{
@@ -19,7 +19,7 @@
                 border-radius: 50%;
                 position: relative;
                 top: 18vmin;
-                border: 10px solid gray;
+                border: 10px solid lightgray;
                 display: flex;
                 justify-content: center;
                 align-items: center;
