@@ -1,0 +1,75 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ngăn chặn cuộn trang khi chatbox mở */
+  }
+
+  #chatbox-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 0px #000000;
+  }
+
+  #chatbox-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #chatbox-body {
+    height: 200px; /* Điều chỉnh chiều cao của khung chat */
+    overflow-y: auto;
+  }
+
+  #chatbox-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+  }
+
+/* Đảm bảo các thành phần không bị che phủ */
+.fixed-bottom {
+    position: fixed;
+    width: 300px;
+    /* Điều chỉnh theo nhu cầu của bạn */
+    max-width: 100%;
+}
+
+.chat-body {
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #f2f2f2;
+
+    .message {
+        width: 80%;
+        margin-bottom: 15px;
+        border-radius: 8px;
+    }
+
+    .message p {
+        padding: 5px;
+        max-width: 70%;
+    }
+
+    .message.sent {
+        float: right;
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .message.received {
+        float: left;
+        background-color: #e5e5e5;
+    }
+}
