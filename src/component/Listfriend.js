@@ -33,7 +33,7 @@ class Listfriend extends React.Component {
                         listfriend.map((item, index) => {
                             return (
                                 <li key={item.id} onClick={() => this.handleDeltail(item)}>
-                                    <span><img src={item.avatar} alt/> {item.first_name} {item.last_name}</span>
+                                    <span><img src={item.avatar} alt=""/> {item.first_name} {item.last_name}</span>
                                 </li>
                             )
                         })

@@ -6,6 +6,9 @@ import Newfeed from "./newfeed";
 import Space from "./Space";
 import newImg from "../assets/image/baidang.jpg"
 import newImg2 from "../assets/image/baidang2.jpg"
+import { Button } from "react-bootstrap";
+import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
+
 class UserDetail extends React.Component {
     state = {
         friend: {}
@@ -35,7 +38,17 @@ class UserDetail extends React.Component {
                                 <img src={friend.avatar}  alt=""/>
                             </div>
                             <div className="user-name">
-                                <h2><b>{friend.first_name} {friend.last_name}</b> </h2>
+                                <span>
+                                <h2><b>{friend.first_name} {friend.last_name}</b> </h2> 
+                                <Button variant="primary" style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    width: '50%',
+                                    margin: '0 auto'
+                                }}><IoChatbubbleEllipsesSharp />&nbsp;Chat</Button>
+                                </span>
+                                
                             </div>
                         </>
                        }

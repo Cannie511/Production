@@ -2,11 +2,10 @@ import React from "react";
 import "../style/Main.scss";
 import UserDetail from "./UserDetail";
 import { Switch } from "react-router-dom/cjs/react-router-dom.min.js";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Newfeed from "./newfeed";
 import avatar from "../assets/image/unnamed.webp"
 import Thanh from "../assets/image/ThanhThanh.jpg"
-import newImg from "../assets/image/baidang.jpg"
 import newImg2 from "../assets/image/baidang2.jpg"
 import newImg3 from "../assets/image/baidang3.jpg"
 import newImg4 from "../assets/image/baidang4.jpg"

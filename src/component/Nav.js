@@ -7,15 +7,15 @@ import {  NavLink } from "react-router-dom";
 import '../App.scss';
 import logo from '../logo.svg';
 import { IoHome } from "react-icons/io5";
+
 import { FaNewspaper } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
-import { Badge } from "react-bootstrap";
 
 class Navigation extends React.Component {
     render() {
         return (
             <div className="nav">
-                <Navbar bg="primary" data-bs-theme="dark" fixed="top">
+                <Navbar bg="var(--color-primary)" className="navabar" data-bs-theme="dark" fixed="top">
                     <Container className="nav-container">
                         <Navbar.Brand className="nav-brand" href="#home"><img src={logo} className="App-logo" alt="logo" />REACT Blog</Navbar.Brand>
                         <Nav className="me-auto nav-link">
@@ -25,6 +25,7 @@ class Navigation extends React.Component {
                                 <IoNotifications />
                                 
                                 </NavLink>
+                                 
                         </Nav>
                     </Container>
                 </Navbar>
