@@ -2,10 +2,13 @@ import React from "react";
 import "../style/Listfriend.scss"
 import axios from "axios";
 import { withRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
+import { Button } from "react-bootstrap";
 
 class Listfriend extends React.Component {
     state = {
-        listfriend: []
+        listfriend: [],
+        showMess: false
     }
     async componentDidMount() {
         let friends = await axios.get('https://reqres.in/api/users?page=1');
@@ -22,6 +25,13 @@ class Listfriend extends React.Component {
             this.props.history.push(`/user/${friend.id}`);
           }, 100);
     }
+    handleShowMess = () =>{
+        let show = true;
+        this.setState({
+            showMess: show
+        })
+        this.props.showMess(show)
+    }
     render() {
         let { listfriend } = this.state;
         return (
@@ -32,8 +42,10 @@ class Listfriend extends React.Component {
                     {listfriend && listfriend.length > 0 &&
                         listfriend.map((item, index) => {
                             return (
-                                <li key={item.id} onClick={() => this.handleDeltail(item)}>
-                                    <span><img src={item.avatar} alt=""/> {item.first_name} {item.last_name}</span>
+                                <li style={{}} key={item.id} onClick={() => this.handleDeltail(item)}>
+                                    <span><img src={item.avatar} alt=""/> {item.first_name} {item.last_name}
+                                    
+                                </span>
                                 </li>
                             )
                         })

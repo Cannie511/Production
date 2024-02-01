@@ -8,10 +8,10 @@ import newImg from "../assets/image/baidang.jpg"
 import newImg2 from "../assets/image/baidang2.jpg"
 import { Button } from "react-bootstrap";
 import { IoChatbubbleEllipsesSharp } from "react-icons/io5";
-
 class UserDetail extends React.Component {
     state = {
-        friend: {}
+        friend: {},
+        showMess: false
     }
     async componentDidMount() {
         if (this.props.match && this.props.match.params) {
@@ -23,9 +23,16 @@ class UserDetail extends React.Component {
             console.log("check friend: ",this.state.friend)
         }
     }
-
+    handleShowMess = () =>{
+        let show = true;
+        this.setState({
+            showMess: show
+        })
+        this.props.showMess(show)
+        
+    }
     render() {
-        let { friend } = this.state;
+        let { friend, showMess} = this.state;
         let isEmptyObj = Object.keys(friend).length === 0;
         console.log("check objeck: ", isEmptyObj)
         return (
@@ -46,7 +53,7 @@ class UserDetail extends React.Component {
                                     alignItems: 'center',
                                     width: '50%',
                                     margin: '0 auto'
-                                }}><IoChatbubbleEllipsesSharp />&nbsp;Chat</Button>
+                                }} onClick={()=>this.handleShowMess()}><IoChatbubbleEllipsesSharp />&nbsp;Chat</Button>
                                 </span>
                                 
                             </div>
@@ -58,6 +65,8 @@ class UserDetail extends React.Component {
             </div>
             <Space/>
             <Newfeed name={friend.first_name +' '+friend.last_name} avt={friend.avatar} email={friend.email} newimg ={newImg}/>
+            {/* {showMess === true ? <ChatBoxELement />: ''} */}
+            
             </>
         )
     }

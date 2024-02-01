@@ -60,12 +60,15 @@ class ChatBoxELement extends React.Component {
     console.log("check flag: ", this.state.flag);
     this.scrollToBottom();
   };
-
+  hideChatBox = () =>{
+    let hidestt = false;
+    this.props.hideCB(hidestt)
+  }
   render() {
     let { ChatContent, message } = this.state;
     return (
       <div id="chatbox-container">
-        <div id="chatbox-header">ChatBox</div>
+        <div id="chatbox-header" onClick={()=>this.hideChatBox()}>ChatBox</div>
         <div id="chatbox-body" ref={this.chatboxBodyRef}>
           <div className="chat-body">
             {ChatContent &&
