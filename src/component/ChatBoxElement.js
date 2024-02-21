@@ -2,16 +2,14 @@ import React from "react";
 import "../style/ChatBox.scss";
 import ChatMessage from "./ChatMessage";
 import { IoSend } from "react-icons/io5";
-import { IoHome } from "react-icons/io5";
 
 class ChatBoxELement extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       ChatContent: [
-        { id: 1, message: "Hello Bae" },
-        { id: 2, message: "Tell me" },
-        { id: 1, message: "Can we go to Vung Tau beach at this Lunar ?" },
+        { id: 1, message: "Hello" },
+        { id: 2, message: "Hi" },
       ],
       messageContent: {},
       flag: 0,
